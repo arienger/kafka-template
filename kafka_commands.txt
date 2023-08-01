@@ -1,0 +1,31 @@
+*****************************************  
+  STARTING Kafka:
+*****************************************
+-- FIRST: start ZooKeeper:
+C:\kafka_2.13-3.5.1\bin\windows\zookeeper-server-start.bat C:\kafka_2.13-3.5.1\config\zookeeper.properties
+
+-- SECOND: start Kafka-server:
+C:\kafka_2.13-3.5.1\bin\windows\kafka-server-start.bat C:\kafka_2.13-3.5.1\config\server.properties
+
+
+*****************************************
+  STOPPING Kafka:
+*****************************************
+-- FIRST: stop Kafka-server:
+C:\kafka_2.13-3.5.1\bin\windows>kafka-server-stop.bat
+
+-- SECOND: stop ZooKeeper:
+C:\kafka_2.13-3.5.1\bin\windows>zookeeper-server-stop.bat
+
+*****************************************
+-- SOME commands:
+*****************************************
+C:\kafka_2.13-3.5.1\bin\windows>kafka-topics.bat --list --bootstrap-server localhost:9092
+C:\kafka_2.13-3.5.1\bin\windows>kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic NewTopic
+C:\kafka_2.13-3.5.1\bin\windows>kafka-broker-api-versions.bat --bootstrap-server localhost:9092
+
+
+*****************************************
+-- References:
+*****************************************
+https://hevodata.com/learn/install-kafka-on-windows/#45
